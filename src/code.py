@@ -3,7 +3,9 @@ import random
 walk_messages = [
     'That rock looks familiar...', 
     "It feels like it's been hours... but the sun hasn't moved...",
-    'Your legs begin to hurt'
+    'Your legs begin to hurt',
+    'Whose tracks are those?',
+    "What are those noises? They've been getting closer. "
 ]
 
 affirm_resp = ['yes']
@@ -25,7 +27,7 @@ def leave_plane
     if response in affirm_resp:
         return True
     else:
-     return False
+        return False
     
 up_wind = ['upwind', 'up']
 down_wind = ['downwind', 'down']
@@ -68,7 +70,8 @@ def hands_spear
     else:
         return True
 
-raw = ['raw']
+raw = ['raw', 'salmonell baybey', 'salmonella', 'sam on ella', "don't cook it", "dont cook it"]
+cook = ['cook', 'cook it', 'try cooking it', 'i cook it', 'fire', 'my mixtape']
 def raw_cook
     response = input("Wow, it worked! You feel like Tarzan. You have a slippery fish in your hands. You almost drop it, but don't. Now, do you just eat it raw or try to cook it?\n").lower()
     while response not in :
