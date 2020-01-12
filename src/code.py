@@ -1,5 +1,6 @@
 import random
 
+#This is for the indefinite loop of 'keep walking'. After 8-10 or so, they should be able to figure it out. If not... natural selection. 
 walk_messages = [
     'That rock looks familiar...', 
     "It feels like it's been hours... but the sun hasn't moved...",
@@ -8,9 +9,12 @@ walk_messages = [
     "What are those noises? They've been getting closer. "
 ]
 
+#This just means when they respond yes or no, which they do quite a few times, I don't have to recreate it each time
 affirm_resp = ['yes']
 neg_resp = ['no']
 
+""""
+I used this to copy and paste after the first 5 or so functions. They all have the same format basically.
 def 
     response = input(" \n").lower()
     while response not in :
@@ -19,6 +23,7 @@ def
         return True
     else:
         return False
+"""
 
 def leave_plane
     response = input('As your sight begins to clear, you see a black column raising from the plane. You smell something acrid, do you leave the plane? Yes or no. \n').lower()
@@ -28,10 +33,10 @@ def leave_plane
         return True
     else:
         return False
-    
+
+#I make these each time the answer isn't yes or no. I try to add quite a few options they may respond with but still have it reask with a bit of a clarification in case it doesn't understand their response.  
 up_wind = ['upwind', 'up']
 down_wind = ['downwind', 'down']
-
 def up_down_wind
     response = input("As you walk away, you hear a defeaning explosion. It was a good thing you left or you'd be a goner. Good choice. The plane exploded. Now as you leave, do you want to go up or downwind? \n").lower()
     while response not in up_wind or down_wind:
@@ -59,6 +64,7 @@ def catch_fish
     else:
         return False
 
+#same as up or downwind but with more options, i add as many as i can reasonably think of because i don't want it to break the immersion, however limited. 
 hands = ['hands', 'barehands', 'use my hands', 'use your hands', 'use hands', 'try to use my hands']
 spear = ['spear', 'make spear', 'make a spear', 'try to make a spear', 'try spear', 'a spear']
 def hands_spear
@@ -70,7 +76,10 @@ def hands_spear
     else:
         return True
 
-raw = ['raw', 'salmonell baybey', 'salmonella', 'sam on ella', "don't cook it", "dont cook it", 'eat it raw']
+#my mixtape = fire
+#fire = needed for cooking
+#therefore, by the transitive property
+raw = ['raw', 'salmonella baybey', 'salmonella', 'sam on ella', "don't cook it", "dont cook it", 'eat it raw']
 cook = ['cook', 'cook it', 'try cooking it', 'i cook it', 'fire', 'my mixtape']
 def raw_cook
     response = input("Wow, it worked! You feel like Tarzan. You have a slippery fish in your hands. You almost drop it, but don't. Now, do you just eat it raw or try to cook it?\n").lower()
@@ -102,8 +111,7 @@ def berries
         return False
 
 walk = ['walk', 'keep walking', 'keep going', 'walking', 'continue' "don't stop", 'dont stop', 'stopnt', 'sleepnt', "sleepn't", "stopn't"]
-sleep = ['sleep']
-
+sleep = ['sleep', 'go to sleep', 'walknt', 'pause', 'sleep for the night', 'go to sleep for the night', 'stop walking', 'dont walk']
 def walk_sleep
     response = input("You find yourself *yawn* getting *yawn* tired. You know you can't push yourself too much. Do you want to keep walking or sleep for the night?\n").lower()
     while response not in walk or sleep:
@@ -158,6 +166,7 @@ def road
     else:
         return False
 
+#this just keeps walking and looping. if they type break, i want the entire code to end just like if they died. it'll be a little easter egg. I just need to make sure that the one 'break' is sufficient and test whether i need it where it'll actually loop.
 secret_option = ['break']
 def walk_indef
     print(random.choice(walk_messages))
@@ -169,6 +178,7 @@ def walk_indef
     else:
         break
 
+#don't accept food from strangers. maybe theyre living in the middle of alaska for a reason. 
 def warm_meal
     print("What's that? \nSmoke rising in the distance?\nEven if it's just a campfire... it could be your saving grace.\nYou run to it, stumbling through the thick snow\nYou can't believe your eyes...\nIt's a house.\n You stumble up to the door and pound on it.\nAn old lady opens the door. For a second you think it might be your oma, but she died when you were 12.\nShe ushers you in her cottage. Her husband wraps a blanket around you while she adds wood to the fire.\nWhat happened, they ask. Are you okay?\nYou can barely respond. It's just now you realize how much everything hurts.\n'I was in a plane crash', you explain. 'No one- no one else made it out'.\n 'Oh sweetie', she croons. She puts a mug of hot tea next to you. You don't know if you can pick it up without dropping it. Your fingers are still so numb.\n")
     print("You begin to warm up after what feels like hours sitting in front of the fire. The husband tends to the fire and tells you stories as the woman makes soup. As she brings the hot bowl over... something seems odd.")
