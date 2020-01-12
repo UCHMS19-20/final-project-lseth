@@ -101,6 +101,85 @@ def berries
     else:
         return False
 
+walk = ['walk', 'keep walking', 'keep going', 'walking', 'continue' "don't stop", 'dont stop', 'stopnt', 'sleepnt', "sleepn't", "stopn't"]
+sleep = ['sleep']
+
+def walk_sleep
+    response = input("You find yourself *yawn* getting *yawn* tired. You know you can't push yourself too much. Do you want to keep walking or sleep for the night?\n").lower()
+    while response not in walk or sleep:
+        response = input("While it's good to take a pause, you can't stay here forever. Keep walking or go to sleep? \n").lower()
+    if response in walk:
+        return True
+    else:
+        return False
+
+igloo = ['an igloo', 'structure', 'lean to', 'leanto', 'build a structure', 'igloo', 'build a igloo', 'build an igloo']
+the_open = ['sleep in the open', 'buildnt', 'sleep out in the open', 'open', 'the open']
+def igloo_open
+    response = input("Good. Keep up your strength for tomorrow to try to find help. Do you try to make some sort of structure, like an igloo, or do you sleep out in the open?\n").lower()
+    while response not in igloo or the_open:
+        response = input("Where do you want to sleep? An igloo or the open? \n").lower()
+    if response in igloo:
+        return True
+    else:
+        return False
+
+def eat_snow
+    response = input("You collapsed from exhaustion in the middle of the night. Somehow you make it through the night okay. You might have some frostbite in your left hand, but you don't have time to think about that right now. Your mouth feels like sandpaper and you can tell you're dehydrated. You were already a little thirsty when you took off. Do you try to eat snow? \n").lower()
+    while response not in affirm_resp or neg_resp:
+        response = input("Do you eat snow to quench your thirst?\n").lower()
+    if response in affirm_resp:
+        return True
+    else:
+        return False
+
+def walk_three
+    response = input("Do you keep walking? Yes or yes. \n").lower()
+    while response not in affirm_resp:
+        response = input("Do you keep walking? Yes or yes. \n").lower()
+    if response in affirm_resp:
+        return True
+
+def last_walk
+    response = input("Do you keep walking? Yes or no. \n").lower()
+    while response not in affirm_resp or neg_resp:
+        response = input("You can choose this time. Truly. Yes or no. \n").lower()
+    if response in affirm_resp:
+        return True
+    else:
+        return False
+
+def road
+    response = input("You come around a small hill and see a break in the trees. As you approach, you think it may be a clearing. It's too long for that. You see something up ahead... it's a moose crossing sign. You- You did it! This will lead to someone. Something. Anything that can help you. But doubt starts to creep in. Do you follow the road, which may be your best chance of survival? \n").lower()
+    while response not in affirm_resp or neg_resp:
+        response = input("You are overjoyed, it may not be much but it's something. Do you follow the road? \n").lower()
+    if response in affirm_resp:
+        return True
+    else:
+        return False
+
+secret_option = ['break']
+def walk_indef
+    print(random.choice(walk_messages))
+    response = input("Keep walking? Yes or yes? \n").lower()
+    while response not in affirm_resp or secret_option:
+        response = input("You really don't have any other choice now. \n").lower()
+    if response in affirm_resp:
+        return True
+    else:
+        break
+
+def warm_meal
+    print("What's that? \nSmoke rising in the distance?\nEven if it's just a campfire... it could be your saving grace.\nYou run to it, stumbling through the thick snow\nYou can't believe your eyes...\nIt's a house.\n You stumble up to the door and pound on it.\nAn old lady opens the door. For a second you think it might be your oma, but she died when you were 12.\nShe ushers you in her cottage. Her husband wraps a blanket around you while she adds wood to the fire.\nWhat happened, they ask. Are you okay?\nYou can barely respond. It's just now you realize how much everything hurts.\n'I was in a plane crash', you explain. 'No one- no one else made it out'.\n 'Oh sweetie', she croons. She puts a mug of hot tea next to you. You don't know if you can pick it up without dropping it. Your fingers are still so numb.\n")
+    print("You begin to warm up after what feels like hours sitting in front of the fire. The husband tends to the fire and tells you stories as the woman makes soup. As she brings the hot bowl over... something seems odd.")
+    response = input("Do you accept the soup?\n").lower()
+    while response not in affirm_resp or neg_resp:
+        response = input("The woman waits for your answer.\n").lower()
+    if response in affirm_resp:
+        return True
+    else:
+        return False
+
 while true 
     print walk message
     if 'secret word' then break
@@ -127,3 +206,31 @@ raw_cook_ch = raw_cook
 fire_ch = fire
 #getting berries is true and death
 berries_ch = berries
+#walk is true and continues
+#sleep goes to snow igloo
+sleep_ch = walk_sleep
+#igloo is true and death
+#open is false and death
+igloo_ch = igloo_open
+#eat snow is true and death
+#not eating snow is false and living
+snow_ch = eat_snow
+""" print this before the three walks. it can't be in the three walks cause you only want it to show up twice
+Good choice. If you had a way to melt it, it would be fine. Eating frozen snow is worse than nothing because it is too cold. 
+"""
+#um yes is true is walking. do this 3 times
+walk_ch = walk_three
+#yes is walking and cont
+#no is stop and die
+fin_walk_ch = last_walk
+#follow road is true and cont to house
+#not following road is false and you go into the eternal loop of walking. 
+road_ch = road
+"""print this before indef walking. same thing as the three walks. It can't be in the loop.
+You start to doubt yourself as you walk away from the road. You shake it off. There's no room to doubt yourself out here. You need to survive. You keep walking."""
+#yes is walk and loops back
+#'break' breaks and should completely end code. 
+walk_indef_ch = walk_indef
+#accepting soup is true and death
+#rejecting soup is false and also death
+meal_ch = warm_meal
