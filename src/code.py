@@ -17,9 +17,13 @@ neg_resp = ['no']
 """"
 I used this to copy and paste after the first 5 or so functions. They all have the same format basically.
 def 
+# the name goes up there
     response = input(" \n").lower()
+    #has a lil comment and a question
     while response not in _____ and response not in ______:
+    #quick lil data validation
         response = input("\n").lower()
+    #returns bool value based on response
     if response in :
         return True
     else:
@@ -200,7 +204,7 @@ while true
 #game
 
 #leave plane is true and survival
-#int
+print("s")
 plane_ch = leave_plane()
 if plane_ch:
     #upwind is true and survive
