@@ -6,7 +6,8 @@ walk_messages = [
     "It feels like it's been hours... but the sun hasn't moved...",
     'Your legs begin to hurt',
     'Whose tracks are those?',
-    "What are those noises? They've been getting closer. "
+    "What are those noises? They've been getting closer.",
+    "You think "
 ]
 
 #This just means when they respond yes or no, which they do quite a few times, I don't have to recreate it each time
@@ -26,7 +27,7 @@ def
 """
 
 def leave_plane():
-    response = input('As your sight begins to clear, you see a black column raising from the plane. You smell something acrid, do you leave the plane? Yes or no.\n').lower()
+    response = input('As your sight begins to clear, you see a black column rising from the plane. You smell something acrid, do you leave the plane? Yes or no.\n').lower()
     while response not in affirm_resp and response not in neg_resp:
         response = input("This is important. It's a time sensitive crucical decision. Do you walk away from the plane, yes or no?\n").lower()
     if response in affirm_resp:
@@ -94,7 +95,7 @@ clothes = ['clothes', 'my clothes', 'the clothes', 'try to use my clothes']
 wood = ['wood', 'wood nearby', 'nearby wood', 'try to find food nearby']
 def fire():
     response = input("You may be in the wilderness, but even these waters have been polluted by humans. Good choice. Now you just need some kindling to start the fire. You have your clothes or you can try to find wood nearby. Which do you choose? Wood or clothes? \n").lower()
-    while response not in clothes and response not in woodrup:
+    while response not in clothes and response not in wood:
         response = input("You got a little dizzy catching the fish. Try to stick to just clothes or wood. \n").lower()
     if response in clothes:
         return True
@@ -149,7 +150,7 @@ def walk_three():
         return True
 
 def last_walk():
-    response = input("Do you keep walking? Yes or no. \n").lower()
+    response = input("You regain freewill. Do you keep walking? Yes or no. \n").lower()
     while response not in affirm_resp and response not in neg_resp:
         response = input("You can choose this time. Truly. Yes or no. \n").lower()
     if response in affirm_resp:
@@ -184,7 +185,7 @@ def warm_meal():
     print("What's that? \nSmoke rising in the distance?\nEven if it's just a campfire... it could be your saving grace.\nYou run to it, stumbling through the thick snow\nYou can't believe your eyes...\nIt's a house.\n You stumble up to the door and pound on it.\nAn old lady opens the door. For a second you think it might be your oma, but she died when you were 12.\nShe ushers you in her cottage. Her husband wraps a blanket around you while she adds wood to the fire.\nWhat happened, they ask. Are you okay?\nYou can barely respond. It's just now you realize how much everything hurts.\n'I was in a plane crash', you explain. 'No one- no one else made it out'.\n 'Oh sweetie', she croons. She puts a mug of hot tea next to you. You don't know if you can pick it up without dropping it. Your fingers are still so numb.\n")
     print("You begin to warm up after what feels like hours sitting in front of the fire. The husband tends to the fire and tells you stories as the woman makes soup. As she brings the hot bowl over... something seems odd.")
     response = input("Do you accept the soup?\n").lower()
-    while response not in affirm_resp or neg_resp:
+    while response not in affirm_resp and response not in neg_resp:
         response = input("The woman waits for your answer.\n").lower()
     if response in affirm_resp:
         return True
@@ -221,7 +222,7 @@ if plane_ch:
                 #cooked is false and goes to fire
                 raw_cook_ch = raw_cook()
                 if raw_cook_ch:
-                    print("fix this")
+                    print("make this go to berries")
                     #this needs to go to berries_ch
                 else:
                     #clothes is true and death
@@ -241,15 +242,6 @@ if plane_ch:
                     #sleep goes to snow igloo
                     sleep_ch = walk_sleep()
                     if sleep_ch:
-                        #igloo is true and death
-                        #open is false and death
-                        igloo_ch = igloo_open()
-                        if igloo_ch:
-                            print("igloo? more like dead you")
-                        else:
-                            print("open? more like dead you")
-                    else:
-                        print("collapse from exhaustion")
                         #eat snow is true and death
                         #not eating snow is false and living
                         snow_ch = eat_snow()
@@ -257,7 +249,7 @@ if plane_ch:
                             print("u die")
                         else:
                             print("Good choice. If you had a way to melt it, it would be fine. Eating frozen snow is worse than nothing because it is too cold.")
-                            for n in range(3):
+                            for n in range(2):
                                 #yes is true and walking. do it three tiems
                                 walk_ch = walk_three()
                             #yes is walking and cont
@@ -279,10 +271,20 @@ if plane_ch:
                                     print("You start to doubt yourself as you walk away from the road. You shake it off. There's no room to doubt yourself out here. You need to survive. You keep walking.")
                                     #yes is walk and loops back
                                     #'break' breaks and should completely end code. 
-                                    walk_indef_ch = walk_indef()
+                                    while True:
+                                        walk_indef_ch = walk_indef()
                             else:
-                                print("u die")                          
+                                print("You succumb to the darkness. They find your body in the spring when the snow melts.")     
+                    else:
+                        #igloo is true and death
+                        #open is false and death
+                        igloo_ch = igloo_open()
+                        if igloo_ch:
+                            print("Better to sleep under shelter than to sleep out in the open. Unfortunately, you're bad at making igloos. It collapses on you and kills you in your sleep.")
+                        else:
+                            print("Sleep out in the open? It's freezing. You fool. You rightfully die of exposure and hyporthermia.")
+                                             
     else:
-        print("u die")
+        print("Should've gone upwind. Remember that black smoke? It was toxic and killed you.")
 else:
-    print("You should have walked away. Remember that black smoke? It was toxic and killed you.")
+    print("You should have walked away. The plane exploded.")
