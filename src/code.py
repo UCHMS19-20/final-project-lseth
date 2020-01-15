@@ -7,7 +7,7 @@ walk_messages = [
     'Your legs begin to hurt',
     'Whose tracks are those?',
     "What are those noises? They've been getting closer.",
-    "You think "
+    "Do you ever think about how, in the grand scheme of things, everything you do is so insignificant?"
 ]
 
 #This just means when they respond yes or no, which they do quite a few times, I don't have to recreate it each time
