@@ -8,7 +8,9 @@ walk_messages = [
     'Whose tracks are those?',
     "What are those noises? They've been getting closer.",
     "Lap ?????? of ??????",
-    "They say the definition of insanity is doing the same thing over and over expecting a different result."
+    "They say the definition of insanity is doing the same thing over and over expecting a different result.",
+    "You ever think about how, in the grand scheme of things, everything we do is so insignificant?"
+
 ]
 
 #This just means when they respond yes or no, which they do quite a few times, I don't have to recreate it each time
