@@ -7,7 +7,14 @@ walk_messages = [
     'Your legs begin to hurt',
     'Whose tracks are those?',
     "What are those noises? They've been getting closer.",
+<<<<<<< Updated upstream
     "Do you ever think about how, in the grand scheme of things, everything you do is so insignificant?"
+=======
+    "Lap ????? of ?????",
+    "They say the definition of insanity is doing the same thing over and over expecting a different result.",
+    "You ever think about how, in the grand scheme of things, everything we do is so insignificant?"
+
+>>>>>>> Stashed changes
 ]
 
 #This just means when they respond yes or no, which they do quite a few times, I don't have to recreate it each time
