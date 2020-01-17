@@ -23,9 +23,13 @@ neg_resp = ['no']
 """"
 I used this to copy and paste after the first 5 or so functions. They all have the same format basically.
 def 
+# the name goes up there
     response = input(" \n").lower()
+    #has a lil comment and a question
     while response not in _____ and response not in ______:
+    #quick lil data validation
         response = input("\n").lower()
+    #returns bool value based on response
     if response in :
         return True
     else:
@@ -206,7 +210,11 @@ while true
 #game
 
 #leave plane is true and survival
-#int
+print("You've been an Alaskan bush plane pilot for years. You've seen all there is to see. You're the best around. That's why when the big storm is coming in, they call you. There's a clinic up north that needs supplies.")
+print("You do the plane's preflight, keeping an eye on the storm front on the radar. It looks bad. You should be able to get in before it gets too bad. Then come back after the storm passes.")
+print("The first bit of the flight looks good. You see the storm is closing in faster, but you're so close to the airport near the clinic. You push on.")
+print("In moments, it all goes wrong. You can tell, you can just tell, you're going down.")
+print("Nothing you do helps. You're losing altitude quickly. The last thing you remember is the trees below you getting closer.")
 plane_ch = leave_plane()
 if plane_ch:
     #upwind is true and survive
@@ -218,7 +226,7 @@ if plane_ch:
     #need to leave river w false to survive
         river_ch = follow_river()
         if river_ch:
-            print("While rivers may go to civilization, this river turned into a gorge and you realized too late. You were trapped and died.")
+            print("While rivers may go to civilization, this river turned into a gorge and you tried to climb out. You slip and fall in the water. The freezing currents sweep you away.")
         else:
             fish_ch = catch_fish()
             if fish_ch:
@@ -228,10 +236,12 @@ if plane_ch:
                 #cooked is false and goes to fire
                 raw_cook_ch = raw_cook()
                 if raw_cook_ch:
+                    #this has to be here because i have no way of getting this to the other berries
                     #getting berries is true and death
+                    print("Hmm... you feel a little nauseous but ultimately you are fine. If you had tried to cook it, maybe the fire would have been your downfall.")
                     berries_ch = berries() 
                     if berries_ch:
-                        print("You didn't remember your training well enough. They were poisonous. You die.")
+                        print("You didn't remember your training quite well enough. There was a bright red berry you thought you recognized. They were poisonous. You die.")
                     else:
                         #walk is true and continues
                         #sleep goes to snow igloo
@@ -241,7 +251,7 @@ if plane_ch:
                             #not eating snow is false and living
                             snow_ch = eat_snow()
                             if snow_ch:
-                                print("u die")
+                                print("It's good to have fresh water, but you need to melt the snow. Without melting it it just deceases your body temperature too much.")
                             else:
                                 print("Good choice. If you had a way to melt it, it would be fine. Eating frozen snow is worse than nothing because it is too cold.")
                                 for n in range(2):
@@ -259,9 +269,9 @@ if plane_ch:
                                         #rejecting soup is false and also death
                                         meal_ch = warm_meal()  
                                         if meal_ch: 
-                                            print("don't accept food from strangers")
+                                            print("Were you never taught stranger danger? Don't accept food from strangers. It was poisoned. Did you ever think, hey, maybe they're living in the middle of nowhere for a reason? Somewhere there are no police?")
                                         else:
-                                            print("that's rude ur axed to death in ur sleep")
+                                            print("That's awfully rude. They invite you in your home and offer you a meal. They take offense and you are killed in your sleep.")
                                     else:
                                         print("You start to doubt yourself as you walk away from the road. You shake it off. There's no room to doubt yourself out here. You need to survive. You keep walking.")
                                         #yes is walk and loops back
@@ -277,7 +287,7 @@ if plane_ch:
                             if igloo_ch:
                                 print("Better to sleep under shelter than to sleep out in the open. Unfortunately, you're bad at making igloos. It collapses on you and kills you in your sleep.")
                             else:
-                                print("Sleep out in the open? It's freezing. You fool. You rightfully die of exposure and hyporthermia.")                                   
+                                print("Sleep out in the open? It's freezing. You fool. You rightfully die of exposure and hyporthermia.")
                 else:
                     #clothes is true and death
                     #wood is false and also death
@@ -290,7 +300,7 @@ if plane_ch:
                 #getting berries is true and death
                 berries_ch = berries() 
                 if berries_ch:
-                    print("You didn't remember your training well enough. They were poisonous. You die.")
+                    print("You didn't remember your training well enough. There was a bright red berry you thought you recognized. They were poisonous. You die.")
                 else:
                     #walk is true and continues
                     #sleep goes to snow igloo
@@ -300,7 +310,7 @@ if plane_ch:
                         #not eating snow is false and living
                         snow_ch = eat_snow()
                         if snow_ch:
-                            print("u die")
+                            print("It's good to have fresh water, but you need to melt the snow. Without melting it it just deceases your body temperature too much.")
                         else:
                             print("Good choice. If you had a way to melt it, it would be fine. Eating frozen snow is worse than nothing because it is too cold.")
                             for n in range(2):
@@ -318,9 +328,9 @@ if plane_ch:
                                     #rejecting soup is false and also death
                                     meal_ch = warm_meal()  
                                     if meal_ch: 
-                                        print("don't accept food from strangers")
+                                        print("Were you never taught stranger danger? Don't accept food from strangers. It was poisoned. Did you ever think, hey, maybe they're living in the middle of nowhere for a reason? Somewhere there are no police?")
                                     else:
-                                        print("that's rude ur axed to death in ur sleep")
+                                        print("That's awfully rude. They invite you in your home and offer you a meal. They take offense and you are killed in your sleep.")
                                 else:
                                     print("You start to doubt yourself as you walk away from the road. You shake it off. There's no room to doubt yourself out here. You need to survive. You keep walking.")
                                     #yes is walk and loops back
@@ -336,8 +346,8 @@ if plane_ch:
                         if igloo_ch:
                             print("Better to sleep under shelter than to sleep out in the open. Unfortunately, you're bad at making igloos. It collapses on you and kills you in your sleep.")
                         else:
-                            print("Sleep out in the open? It's freezing. You fool. You rightfully die of exposure and hyporthermia.")                                    
+                            print("Sleep out in the open? It's freezing. You fool. You rightfully die of exposure and hyporthermia.") 
     else:
-        print("Should've gone upwind. Remember that black smoke? It was toxic and killed you.")
+        print("Should've gone upwind. Remember that column of black smoke? It was the burning avionics and avgas. It was toxic and killed you.")
 else:
-    print("You should have walked away. The plane exploded.")
+    print("You should have walked away. There was a leak in the fuel system and the damaged, sparking wire ignited it. The plane exploded.")
