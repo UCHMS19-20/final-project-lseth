@@ -7,14 +7,13 @@ walk_messages = [
     'Your legs begin to hurt',
     'Whose tracks are those?',
     "What are those noises? They've been getting closer.",
-<<<<<<< Updated upstream
-    "Do you ever think about how, in the grand scheme of things, everything you do is so insignificant?"
-=======
     "Lap ????? of ?????",
     "They say the definition of insanity is doing the same thing over and over expecting a different result.",
     "You ever think about how, in the grand scheme of things, everything we do is so insignificant?"
-
->>>>>>> Stashed changes
+    "I like long walks, but not like this.",
+    "Maybe I can find Bigfoot and live with him.",
+    "If I can figure out where north is, maybe I can find Santa",
+    ""
 ]
 
 #This just means when they respond yes or no, which they do quite a few times, I don't have to recreate it each time
@@ -229,8 +228,56 @@ if plane_ch:
                 #cooked is false and goes to fire
                 raw_cook_ch = raw_cook()
                 if raw_cook_ch:
-                    print("make this go to berries")
-                    #this needs to go to berries_ch
+                    #getting berries is true and death
+                    berries_ch = berries() 
+                    if berries_ch:
+                        print("You didn't remember your training well enough. They were poisonous. You die.")
+                    else:
+                        #walk is true and continues
+                        #sleep goes to snow igloo
+                        sleep_ch = walk_sleep()
+                        if sleep_ch:
+                            #eat snow is true and death
+                            #not eating snow is false and living
+                            snow_ch = eat_snow()
+                            if snow_ch:
+                                print("u die")
+                            else:
+                                print("Good choice. If you had a way to melt it, it would be fine. Eating frozen snow is worse than nothing because it is too cold.")
+                                for n in range(2):
+                                    #yes is true and walking. do it three tiems
+                                    walk_ch = walk_three()
+                                #yes is walking and cont
+                                #no is stop and die
+                                fin_walk_ch = last_walk()
+                                if fin_walk_ch:
+                                    #follow road is true and cont to house
+                                    #not following road is false and you go into the eternal loop of walking. 
+                                    road_ch = road() 
+                                    if road_ch:
+                                        #accepting soup is true and death
+                                        #rejecting soup is false and also death
+                                        meal_ch = warm_meal()  
+                                        if meal_ch: 
+                                            print("don't accept food from strangers")
+                                        else:
+                                            print("that's rude ur axed to death in ur sleep")
+                                    else:
+                                        print("You start to doubt yourself as you walk away from the road. You shake it off. There's no room to doubt yourself out here. You need to survive. You keep walking.")
+                                        #yes is walk and loops back
+                                        #'break' breaks and should completely end code. 
+                                        while True:
+                                            walk_indef_ch = walk_indef()
+                                else:
+                                    print("You succumb to the darkness. They find your body in the spring when the snow melts.")     
+                        else:
+                            #igloo is true and death
+                            #open is false and death
+                            igloo_ch = igloo_open()
+                            if igloo_ch:
+                                print("Better to sleep under shelter than to sleep out in the open. Unfortunately, you're bad at making igloos. It collapses on you and kills you in your sleep.")
+                            else:
+                                print("Sleep out in the open? It's freezing. You fool. You rightfully die of exposure and hyporthermia.")                                   
                 else:
                     #clothes is true and death
                     #wood is false and also death
@@ -289,8 +336,7 @@ if plane_ch:
                         if igloo_ch:
                             print("Better to sleep under shelter than to sleep out in the open. Unfortunately, you're bad at making igloos. It collapses on you and kills you in your sleep.")
                         else:
-                            print("Sleep out in the open? It's freezing. You fool. You rightfully die of exposure and hyporthermia.")
-                                             
+                            print("Sleep out in the open? It's freezing. You fool. You rightfully die of exposure and hyporthermia.")                                    
     else:
         print("Should've gone upwind. Remember that black smoke? It was toxic and killed you.")
 else:
