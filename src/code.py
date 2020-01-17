@@ -7,10 +7,13 @@ walk_messages = [
     'Your legs begin to hurt',
     'Whose tracks are those?',
     "What are those noises? They've been getting closer.",
-    "Lap ?????? of ??????",
+    "Lap ????? of ?????",
     "They say the definition of insanity is doing the same thing over and over expecting a different result.",
     "You ever think about how, in the grand scheme of things, everything we do is so insignificant?"
-
+    "I like long walks, but not like this.",
+    "Maybe I can find Bigfoot and live with him.",
+    "If I can figure out where north is, maybe I can find Santa",
+    "If I ever get back. I'm moving to the tropics."
 ]
 
 #This just means when they respond yes or no, which they do quite a few times, I don't have to recreate it each time
