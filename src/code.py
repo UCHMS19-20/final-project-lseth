@@ -13,7 +13,7 @@ walk_messages = [
     "I like long walks, but not like this.",
     "Maybe I can find Bigfoot and live with him.",
     "If I can figure out where north is, maybe I can find Santa",
-    ""
+    "If I ever get back. I'm moving to the tropics."
 ]
 
 #This just means when they respond yes or no, which they do quite a few times, I don't have to recreate it each time
